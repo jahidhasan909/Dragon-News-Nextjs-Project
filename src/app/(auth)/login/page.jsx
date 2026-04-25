@@ -1,21 +1,35 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const LoagingPage = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm()
 
-    const handleForm = (data) => {
-        console.log(data);
+    const handleForm = async(data) => {
+          const {email, password} = data
+                const { data: res, error } = await authClient.signIn.email({
+                    email: email, // required
+                    password: password, // required
+                    callbackURL: '/',
+                });
+        
+                if (res) {
+                    toast.success('LogIn successful')
+                }
+                if (error) {
+                    toast.error(error.message)
+                }
 
     }
 
 
 
     return (
-        <div className='container mx-auto flex justify-center mt-28 bg-base-300  rounded-md'>
+        <div className='container mx-auto flex justify-center my-4 bg-base-300  rounded-md'>
             <form onSubmit={handleSubmit(handleForm)} className='bg-white my-20 w-[470px] h-[440px] rounded-md '>
                 <fieldset className="fieldset px-5 py-5">
                     <h1 className='text-center font-semibold text-2xl mt-5'>Login your account</h1>
