@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import { CiShare2 } from "react-icons/ci";
@@ -42,7 +43,8 @@ const DragonNews = ({ newes }) => {
                             <span className='flex items-center gap-1'><FaEye /> {newes?.total_view}</span>
                         </div>
 
-                        <button className='btn bg-linear-to-r from-black to-gray-500 text-white'><FaArrowRightToBracket /> See Details</button>
+                        <Link href={`/newsdetails/${newes._id}`}>
+                            <button className='btn bg-linear-to-r from-black to-gray-500 text-white'><FaArrowRightToBracket /> See Details</button></Link>
                     </div>
 
                 </div>

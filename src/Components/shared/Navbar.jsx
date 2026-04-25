@@ -17,7 +17,7 @@ const Navbar = () => {
             </ul>
             <div className='flex items-center gap-2'>
                 <Image src={manlogo} width={40} height={40} alt='man'></Image>
-                <button className='btn bg-linear-to-r from-black to-gray-500 text-white'>Login</button>
+                <Link href={'/login'}><button className='btn bg-linear-to-r from-black to-gray-500 text-white'>Login</button></Link>
             </div>
         </div>
     );
