@@ -1,3 +1,4 @@
+import DragonNews from '@/Components/Homepage/DragonNews/DragonNews';
 import LeftSideSection from '@/Components/Homepage/LeftSideSection/LeftSideSection';
 import RightsideSection from '@/Components/Homepage/RightSideSection/RightsideSection';
 import { getDatabyCategory } from '@/lib/data';
@@ -15,16 +16,16 @@ const DragonNewsPage = async ({ params }) => {
 
 
     return (
-        <div className='grid grid-cols-12 container mx-auto gap-3'>
+        <div className='grid grid-cols-12 container mx-auto gap-5'>
             <div className='col-span-3'>
                 <h2 className='my-4 font-semibold text-2xl'  >All Caterogy</h2>
                 <div>
-                    {category.news_category.map(categories => <LeftSideSection key={categories.category_id} categories={categories}></LeftSideSection>)}
+                    {category.news_category.map(categories => <LeftSideSection key={categories.category_id} categories={categories} activeId={id}></LeftSideSection>)}
                 </div>
             </div>
             <div className='col-span-6'>
                 <h2 className='my-4 font-semibold text-2xl'> Dragon News Home</h2>
-                {news.map(newes => <h1 key={newes._id}>{newes.title}</h1>)}
+                {news.map(newes => <DragonNews key={newes._id} newes={newes}></DragonNews>)}
             </div>
             <div className='col-span-3'>
                 <h2 className='my-4 font-semibold text-2xl'>LogIn With</h2>
