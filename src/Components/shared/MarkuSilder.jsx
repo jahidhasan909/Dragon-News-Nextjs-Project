@@ -5,15 +5,15 @@ import Marquee from "react-fast-marquee";
 const news = [
     {
         id: 1,
-        title: 'Lorem ipsum dolor sit amet consectetur'
+        title: 'Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine'
     },
     {
         id: 2,
-        title: 'Lorem ipsum dolor sit amet consectetur'
+        title: 'Joe Biden announces $3 billion in Ukraine weapons aid'
     },
     {
         id: 3,
-        title: 'Lorem ipsum dolor sit amet consectetur'
+        title: 'U.S. announces largest weapons package for Ukraine'
     }
 ]
 
