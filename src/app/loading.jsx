@@ -1,10 +1,10 @@
 import React from 'react';
-import { ClipLoader } from 'react-spinners';
+import { HashLoader } from 'react-spinners';
 
 const loading = () => {
     return (
         <div className='flex  items-center justify-center min-h-screen'>
-            <ClipLoader />
+            <HashLoader />
         </div>
     );
 };
