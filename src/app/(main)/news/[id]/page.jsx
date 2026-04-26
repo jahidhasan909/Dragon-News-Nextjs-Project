@@ -4,6 +4,11 @@ import RightsideSection from '@/Components/Homepage/RightSideSection/RightsideSe
 import { getDatabyCategory } from '@/lib/data';
 import Image from 'next/image';
 import React from 'react';
+import img1 from '@/assets/img1.png'
+import img2 from '@/assets/img2.png'
+import img3 from '@/assets/img3.png'
+import { CiCalendar } from 'react-icons/ci';
+
 
 const DragonNewsPage = async ({ params }) => {
     const { id } = await params
@@ -20,8 +25,32 @@ const DragonNewsPage = async ({ params }) => {
         <div className='grid grid-cols-12 container mx-auto gap-5'>
             <div className='col-span-3'>
                 <h2 className='my-4 font-semibold text-2xl'  >All Caterogy</h2>
-                <div>
+                <div className='bg-base-200 py-4 rounded-md my-5'>
                     {category.news_category.map(categories => <LeftSideSection key={categories.category_id} categories={categories} activeId={id}></LeftSideSection>)}
+                </div>
+                <div>
+                    <div className='bg-base-300 flex flex-col items-center rounded-md py-4 gap-4'>
+                        <div className='space-y-2 bg-white rounded-md p-2' >
+                            <Image src={img1} width={250} height={200} alt=''></Image>
+                            <h2 className='  truncate w-48 font-semibold'>Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
+                            <div className='flex justify-between w-48'>
+                                <p>Sports</p>
+                                <p className='flex items-center gap-1'><CiCalendar /> Jan 4, 2022</p>
+                            </div>
+                        </div>
+                        <div className='space-y-2 bg-white rounded-md p-2'>
+                            <Image src={img2} width={250} height={200} alt=''></Image>
+                            <h2 className='  truncate w-48 font-semibold'>Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
+                            <p>Sports</p>
+                            <p className='flex items-center gap-1'><CiCalendar /> Jan 4, 2022</p>
+                        </div>
+                        <div className='space-y-2 bg-white rounded-md p-2'>
+                            <Image src={img3} width={250} height={200} alt=''></Image>
+                            <h2 className='  truncate w-48 font-semibold'>Bayern Slams Authorities Over Flight Delay to Club World Cup</h2>
+                            <p>Sports</p>
+                            <p className='flex items-center gap-1'><CiCalendar /> Jan 4, 2022</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='col-span-6'>
