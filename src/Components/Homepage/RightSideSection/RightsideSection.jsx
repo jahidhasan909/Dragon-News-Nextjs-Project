@@ -18,13 +18,20 @@ const RightsideSection = () => {
         console.log(data);
 
     }
+    const handleGitHubLogin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "github"
+        })
+        console.log(data);
+
+    }
 
 
     return (
         <div>
             <div className='flex flex-col gap-2'>
                 <button onClick={handleGoogleLogin} className='flex items-center btn'><FaGoogle /> Login With Google</button>
-                <button className='flex items-center btn'><FaGithub /> Login With Github</button>
+                <button onClick={handleGitHubLogin} className='flex items-center btn'><FaGithub /> Login With Github</button>
             </div>
             <div>
                 <h3 className='text-xl font-semibold mt-4 mb-2'>Find Us On</h3>
